@@ -4,15 +4,15 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.WindowManager;
 
 public class IntroActivity extends AppCompatActivity {
-
-    //commit test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -22,6 +22,6 @@ public class IntroActivity extends AppCompatActivity {
                 //overridePendingTransition(R.anim.fade_in, R.anim.fade_out); //화면 전환 효과
                 finish();
             }
-        }, 500);
+        }, 1000);
     }
 }
