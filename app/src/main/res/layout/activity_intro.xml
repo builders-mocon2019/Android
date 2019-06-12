@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".IntroActivity">
+    android:background="@android:color/white"
+    tools:context=".Intro.IntroActivity">
 
     <ImageView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/builders_icon" />
 
 </LinearLayout>

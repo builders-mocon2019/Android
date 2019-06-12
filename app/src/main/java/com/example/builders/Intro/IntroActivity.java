@@ -1,10 +1,13 @@
-package com.example.builders;
+package com.example.builders.Intro;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.example.builders.Auth.LoginActivity;
+import com.example.builders.R;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -17,7 +20,7 @@ public class IntroActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+                Intent intent = new Intent(IntroActivity.this, WalkthroughActivity.class);
                 startActivity(intent);
                 //overridePendingTransition(R.anim.fade_in, R.anim.fade_out); //화면 전환 효과
                 finish();
