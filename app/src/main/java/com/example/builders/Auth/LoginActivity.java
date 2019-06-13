@@ -2,7 +2,6 @@ package com.example.builders.Auth;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.support.annotation.Nullable;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -70,7 +68,7 @@ public class LoginActivity extends Activity {
 
                 }
                 else{ //로그인이 되어 있지 않은 상태
-                    Toast.makeText(getApplicationContext(), "로그인을 해주세요", Toast.LENGTH_SHORT).show(); //로그인 요청 토스트
+                    //Toast.makeText(getApplicationContext(), "로그인을 해주세요", Toast.LENGTH_SHORT).show(); //로그인 요청 토스트
                 }
 
             }
@@ -93,10 +91,11 @@ public class LoginActivity extends Activity {
                     login(id.getText().toString(), password.getText().toString()); //입력한 ID와 PW로 로그인 요청
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "빈칸을 채워주세요", Toast.LENGTH_SHORT).show(); //빈칸 기입 요청 토스트
+                    Toast.makeText(getApplicationContext(), "정보를 입력해주세요", Toast.LENGTH_SHORT).show(); //빈칸 기입 요청 토스트
                 }
             }
         });
+
 
         regiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,8 +150,8 @@ public class LoginActivity extends Activity {
                             finish(); //DBLoadActivity 실행 후 종료
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show(); //로그인 실패 토스트
-                            loginProgress.setVisibility(View.INVISIBLE); //ProgressBar 숨기기
+                            Toast.makeText(getApplicationContext(), "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show(); //로그인 실패 토스트
+                            loginProgress.setVisibility(View.GONE); //ProgressBar 숨기기
                         }
                     }
                 });

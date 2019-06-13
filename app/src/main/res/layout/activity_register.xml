@@ -1,108 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimary">
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".Auth.RegisterActivity">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/regiFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5단계 중 1단계"
+        android:fontFamily="@font/nanumsquarer"
+        android:layout_gravity="end"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="4dp"
+        android:id="@+id/regiIndiTxt"
+        />
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:max="5"
+        android:progress="1"
+        android:elevation="4dp"
+        android:id="@+id/regi_progress"
+        android:progressDrawable="@drawable/prog_gradient" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:background="@drawable/login_gradient"
+        android:text="다음"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/nanumsquarer"
+        android:textSize="18sp"
+        android:id="@+id/regi_nextBtn"/>
 
-        <android.support.v7.widget.CardView
-            android:layout_centerInParent="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:layout_margin="16dp"
-            android:id="@+id/card_regi">
-
-            <LinearLayout
-                android:layout_margin="12dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="닉네임 (최대 8자)"
-                    android:id="@+id/reg_nickname"
-                    android:maxLength="8"
-                    />
-                <EditText
-                    android:layout_marginTop="16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="한줄소개 (최대 20자)"
-                    android:id="@+id/reg_intro"
-                    android:maxLength="20"
-                    />
-
-                <EditText
-                    android:layout_marginTop="16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="이메일"
-                    android:inputType="textEmailAddress"
-                    android:id="@+id/reg_id"
-                    />
-                <EditText
-                    android:layout_marginTop="16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="패스워드 (a-Z, 0-9, 8자 이상)"
-                    android:inputType="textPassword"
-                    android:id="@+id/reg_password"
-                    />
-                <EditText
-                    android:layout_marginTop="16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="패스워드 확인"
-                    android:inputType="textPassword"
-                    android:id="@+id/reg_passwordcheck"
-                    />
-
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="회원가입"
-                android:textAllCaps="false"
-                android:id="@+id/btn_register"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="#FFFFFF" />
-
-            <ProgressBar
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:indeterminateTint="@color/colorPrimary"
-                android:visibility="invisible"
-                android:id="@+id/progress_regi" />
-
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-</ScrollView>
+</LinearLayout>

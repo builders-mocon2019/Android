@@ -1,21 +1,32 @@
 package com.example.builders.Intro;
 
 import android.content.Intent;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.example.builders.Auth.LoginActivity;
 import com.example.builders.R;
 
 public class IntroActivity extends AppCompatActivity {
 
+    TextView intro;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        intro = findViewById(R.id.intro_txt);
+        Shader textShader=new LinearGradient(150, 0, 0, intro.getPaint().getTextSize(),
+                new int[]{getResources().getColor(R.color.gradientOrange),getResources().getColor(R.color.gradientYellow)},
+                new float[]{0, 1}, Shader.TileMode.CLAMP);
+        intro.getPaint().setShader(textShader);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
