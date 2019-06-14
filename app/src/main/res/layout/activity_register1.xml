@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:gravity="center"
+    android:id="@+id/regi_frag1"
     android:orientation="vertical">
 
     <TextView
@@ -55,6 +56,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nanumsquarer"
             android:hint="이름을 입력해주세요"
+            android:singleLine="true"
+            android:id="@+id/regi_name"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -71,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/nanumsquareb"
             android:text="생년월일"
             android:textColor="@android:color/black"
@@ -81,9 +84,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:id="@+id/regi_birth"
             android:weightSum="7">
 
             <TextView
+                android:id="@+id/regi_birthYear"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -94,9 +99,10 @@
                 android:gravity="center"
                 android:padding="12dp"
                 android:text="2003년"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/regi_birthMonth"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -107,9 +113,10 @@
                 android:gravity="center"
                 android:padding="12dp"
                 android:text="05월"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/regi_birthDay"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -120,12 +127,18 @@
                 android:gravity="center"
                 android:padding="12dp"
                 android:text="05일"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regi1_result"
+        android:visibility="gone"/>
 
 
 </LinearLayout>

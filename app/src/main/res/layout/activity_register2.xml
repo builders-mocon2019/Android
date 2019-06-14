@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:layout_marginTop="24dp"
         android:orientation="vertical">
 
         <TextView
@@ -56,9 +56,12 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nanumsquarer"
             android:hint="ID를 입력해주세요"
+            android:singleLine="true"
+            android:id="@+id/regi_id"
             android:textSize="18sp" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,8 +83,11 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/regi_password"
             android:fontFamily="@font/nanumsquarer"
             android:hint="비밀번호를 입력해주세요"
+            android:inputType="textPassword"
+            android:singleLine="true"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -104,16 +110,34 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
-        <EditText
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nanumsquarer"
-            android:hint="비밀번호를 다시 입력해주세요"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/regi_passwordcheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquarer"
+                android:hint="비밀번호를 다시 입력해주세요"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/regi_passwordcheck_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/ic_check_24dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>

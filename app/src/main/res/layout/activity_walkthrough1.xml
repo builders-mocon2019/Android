@@ -9,6 +9,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="intro1"/>
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:fontFamily="@font/nanumsquarer"
+        android:text="우리들의 팀빌딩 플랫폼, Builders"/>
 
 </LinearLayout>

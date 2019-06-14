@@ -6,13 +6,85 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/regi_txt5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="regi5"/>
+        android:layout_gravity="start"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/nanumsquareeb"
+        android:text="당신이 궁금해요"
+        android:textColor="@android:color/black"
+        android:textSize="48sp" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/regi_btn5"/>
+        android:layout_gravity="start"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/nanumsquarer"
+        android:text="어떤 팀원이 필요하신가요?"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="n"
+        android:text="공모전 / 대회 팀원이 필요해요"
+        android:background="@drawable/login_textbox"
+        android:padding="16dp"
+        android:fontFamily="@font/nanumsquarer"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/regi5_1"
+        android:elevation="3dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="n"
+        android:text="가볍게 취미를 함께 할 사람이 필요해요"
+        android:background="@drawable/login_textbox"
+        android:padding="16dp"
+        android:fontFamily="@font/nanumsquarer"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/regi5_2"
+        android:elevation="3dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="n"
+        android:text="프로젝트를 함께 할 팀원이 필요해요"
+        android:background="@drawable/login_textbox"
+        android:padding="16dp"
+        android:fontFamily="@font/nanumsquarer"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/regi5_3"
+        android:elevation="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regi5_result"
+        android:visibility="gone"/>
+
+
 
 </LinearLayout>

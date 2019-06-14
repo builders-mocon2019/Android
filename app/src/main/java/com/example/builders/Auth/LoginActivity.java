@@ -159,13 +159,13 @@ public class LoginActivity extends Activity {
 
 
     //SOF change-edittext-password-mask-character-to-asterisk
-    public class AsteriskPasswordTransformationMethod extends PasswordTransformationMethod {
+    public static class AsteriskPasswordTransformationMethod extends PasswordTransformationMethod {
         @Override
         public CharSequence getTransformation(CharSequence source, View view) {
             return new PasswordCharSequence(source);
         }
 
-        private class PasswordCharSequence implements CharSequence {
+        static class PasswordCharSequence implements CharSequence {
             private CharSequence mSource;
             public PasswordCharSequence(CharSequence source) {
                 mSource = source;
@@ -180,5 +180,5 @@ public class LoginActivity extends Activity {
                 return mSource.subSequence(start, end);
             }
         }
-    };
+    }
 }
