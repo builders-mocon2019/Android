@@ -81,6 +81,7 @@ public class WalkthroughActivity extends AppIntro {
     public void onSkipPressed(Fragment currentFragment) {
         Intent intent = new Intent(WalkthroughActivity.this, LoginActivity.class);
         startActivity(intent);
+        //overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         //super.onSkipPressed(currentFragment);
 
         // Do something when users tap on Skip button.

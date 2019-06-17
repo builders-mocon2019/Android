@@ -3,12 +3,14 @@ package com.example.builders.Auth;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +20,8 @@ public class RegiFragment3 extends Fragment {
 
     TextView regiTxt3, regiResult;
 
-    TextView r31, r32, r33, r34, r35, r36, r37, r38, r39;
+    TextView r31, r32, r33, r34, r35, r36, r37, r38, r39, rextra_txt;
+    LinearLayout rextra;
 
     @Nullable
     @Override
@@ -52,21 +55,28 @@ public class RegiFragment3 extends Fragment {
         r39 = v.findViewById(R.id.regi3_9);
         r39.setOnClickListener(onClickListener);
 
+        rextra = v.findViewById(R.id.regi3_extra);
+        rextra_txt = v.findViewById(R.id.regi3_extra_txt);
+
         return v;
     }
 
     TextView.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+
             switch (v.getId()) {
                 case R.id.regi3_1:
                     if (r31.getTag().equals("n")) {
-                        r31.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r31.setTextColor(Color.WHITE);
                         r31.setTag("y");
 
                     } else {
-                        r31.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r31.setTextColor(Color.BLACK);
                         r31.setTag("n");
                     }
@@ -74,11 +84,13 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_2:
                     if (r32.getTag().equals("n")) {
-                        r32.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r32.setTextColor(Color.WHITE);
                         r32.setTag("y");
                     } else {
-                        r32.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r32.setTextColor(Color.BLACK);
                         r32.setTag("n");
                     }
@@ -86,11 +98,13 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_3:
                     if (r33.getTag().equals("n")) {
-                        r33.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r33.setTextColor(Color.WHITE);
                         r33.setTag("y");
                     } else {
-                        r33.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r33.setTextColor(Color.BLACK);
                         r33.setTag("n");
                     }
@@ -99,11 +113,13 @@ public class RegiFragment3 extends Fragment {
                 case R.id.regi3_4:
                     r34 = v.findViewById(R.id.regi3_4);
                     if (r34.getTag().equals("n")) {
-                        r34.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r34.setTextColor(Color.WHITE);
                         r34.setTag("y");
                     } else {
-                        r34.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r34.setTextColor(Color.BLACK);
                         r34.setTag("n");
                     }
@@ -111,11 +127,13 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_5:
                     if (r35.getTag().equals("n")) {
-                        r35.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r35.setTextColor(Color.WHITE);
                         r35.setTag("y");
                     } else {
-                        r35.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r35.setTextColor(Color.BLACK);
                         r35.setTag("n");
                     }
@@ -123,11 +141,13 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_6:
                     if (r36.getTag().equals("n")) {
-                        r36.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r36.setTextColor(Color.WHITE);
                         r36.setTag("y");
                     } else {
-                        r36.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r36.setTextColor(Color.BLACK);
                         r36.setTag("n");
                     }
@@ -135,11 +155,13 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_7:
                     if (r37.getTag().equals("n")) {
-                        r37.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r37.setTextColor(Color.WHITE);
                         r37.setTag("y");
                     } else {
-                        r37.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r37.setTextColor(Color.BLACK);
                         r37.setTag("n");
                     }
@@ -147,11 +169,13 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_8:
                     if (r38.getTag().equals("n")) {
-                        r38.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r38.setTextColor(Color.WHITE);
                         r38.setTag("y");
                     } else {
-                        r38.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r38.setTextColor(Color.BLACK);
                         r38.setTag("n");
                     }
@@ -159,13 +183,17 @@ public class RegiFragment3 extends Fragment {
                     break;
                 case R.id.regi3_9:
                     if (r39.getTag().equals("n")) {
-                        r39.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r39.setTextColor(Color.WHITE);
                         r39.setTag("y");
+                        rextra.setVisibility(View.VISIBLE);
                     } else {
-                        r39.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.reverseTransition(200);
                         r39.setTextColor(Color.BLACK);
                         r39.setTag("n");
+                        rextra.setVisibility(View.GONE);
                     }
                     setResult();
                     break;
@@ -185,7 +213,7 @@ public class RegiFragment3 extends Fragment {
         if(r36.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r36.getText().toString());
         if(r37.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r37.getText().toString());
         if(r38.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r38.getText().toString());
-        if(r39.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r39.getText().toString());
+        if(r39.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+rextra_txt.getText().toString());
     }
 
 }

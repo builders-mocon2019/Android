@@ -34,7 +34,7 @@ public class WalkFragment3 extends AppIntroBaseFragment {
     @Override
     public int getDefaultBackgroundColor() {
         // Return the default background color of the slide.
-        return getResources().getColor(R.color.materialGreen);
+        return Color.parseColor("#f38699");
     }
 
     @Override

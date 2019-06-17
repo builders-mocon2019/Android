@@ -33,9 +33,9 @@ public class IntroActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(IntroActivity.this, WalkthroughActivity.class);
                 startActivity(intent);
-                //overridePendingTransition(R.anim.fade_in, R.anim.fade_out); //화면 전환 효과
+                overridePendingTransition(R.anim.fade_in_s, R.anim.fade_out_s); //화면 전환 효과
                 finish();
             }
-        }, 1000);
+        }, 1500);
     }
 }

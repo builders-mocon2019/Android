@@ -3,15 +3,31 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/walk1"
-    android:background="@color/materialRed"
+    android:background="#f9cf69"
+    android:orientation="vertical"
     android:gravity="center">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/walk_1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="우리들의 팀 빌딩 플랫폼"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:fontFamily="@font/nanumsquareeb"
+        android:layout_marginTop="48dp"
+        android:textSize="28sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Builders는 마음이 통하는 누구나 \n팀으로 이어주는 팀 빌딩 플랫폼입니다."
+        android:textColor="@android:color/white"
+        android:gravity="center"
         android:fontFamily="@font/nanumsquarer"
-        android:text="우리들의 팀빌딩 플랫폼, Builders"/>
+        android:layout_marginTop="20dp"
+        android:textSize="20sp" />
 
 </LinearLayout>

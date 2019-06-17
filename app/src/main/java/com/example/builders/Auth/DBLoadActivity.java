@@ -20,6 +20,8 @@ public class DBLoadActivity extends AppCompatActivity {
 
     //현재 로그인한 유저의 정보를 불러와 UserDB에 저장하는 Activity
 
+
+
     //Firebase Authentication, Database 가져오기
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -40,7 +42,7 @@ public class DBLoadActivity extends AppCompatActivity {
                 UserModel model = dataSnapshot.getValue(UserModel.class); //추가된 값을 UserModel 양식으로 DB에서 가져옴
 
                 UserDB userDB = new UserDB(); //현재 유저 정보가 담긴 DB 가져오기
-                if(model.getUserkey().equals(user.getUid())){ //만약 Firebase DB에서 가져온 값과 유저 정보가 같다면(가져온 유저가 본인이라면)
+                if(model.getId().equals(user.getEmail())){ //만약 Firebase DB에서 가져온 값과 유저 정보가 같다면(가져온 유저가 본인이라면)
                     userDB.add(getApplicationContext(), model); //유저 정보 DB에 본인 정보 입력
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish(); //MainActivity로 이동 후 종료
@@ -72,4 +74,5 @@ public class DBLoadActivity extends AppCompatActivity {
 
 
     }
+
 }

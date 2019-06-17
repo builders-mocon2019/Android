@@ -26,7 +26,7 @@ public class RegiFragment1 extends Fragment implements com.tsongkha.spinnerdatep
     TextView regiTxt1, regiBirthYear, regiBirthMonth, regiBirthDay, regiResult;
     LinearLayout regiBirth;
 
-    private int nowYear=2003, nowMonth=4, nowDay=5;
+    private int nowYear=2019, nowMonth=0, nowDay=1;
 
     @Nullable
     @Override
@@ -58,14 +58,14 @@ public class RegiFragment1 extends Fragment implements com.tsongkha.spinnerdatep
                                 nowMonth = monthOfYear;
                                 nowDay = dayOfMonth;
                                 regiBirthYear.setText(year + "년");
-                                regiBirthMonth.setText((monthOfYear + 1) + "월");
-                                regiBirthDay.setText(dayOfMonth + "일");
-                                regiResult.setText(year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth + "일");
+                                regiBirthMonth.setText(((monthOfYear+1)<10?"0":"") + (monthOfYear + 1) + "월");
+                                regiBirthDay.setText(((dayOfMonth)<10?"0":"") + dayOfMonth + "일");
+                                regiResult.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
                             }
                         })
                         .spinnerTheme(R.style.DatePickerStyle)
                         .defaultDate(nowYear, nowMonth, nowDay)
-                        .showTitle(true)
+                        .showTitle(false)
                         .build()
                         .show();
             }

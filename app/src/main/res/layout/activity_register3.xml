@@ -35,12 +35,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp">
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp">
 
         <TextView
             android:id="@+id/regi3_1"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -48,7 +47,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -56,13 +55,13 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="영상"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/regi3_2"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -70,7 +69,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -78,13 +77,13 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="봉사"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/regi3_3"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -92,7 +91,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -100,20 +99,20 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="공연"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp">
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp">
 
         <TextView
             android:id="@+id/regi3_4"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -121,7 +120,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -129,13 +128,13 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="디자인"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/regi3_5"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -143,7 +142,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -151,13 +150,13 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="개발"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/regi3_6"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -165,7 +164,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -173,20 +172,20 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="스포츠"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp">
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp">
 
         <TextView
             android:id="@+id/regi3_7"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -194,7 +193,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -202,13 +201,13 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="아이디어"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/regi3_8"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -216,7 +215,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -224,13 +223,13 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="스터디"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/regi3_9"
-            android:tag="n"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -238,7 +237,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:layout_weight="1"
-            android:background="@drawable/login_textbox"
+            android:background="@drawable/btn_transition"
             android:elevation="4dp"
             android:fontFamily="@font/nanumsquareb"
             android:gravity="center"
@@ -246,16 +245,56 @@
             android:paddingTop="24dp"
             android:paddingEnd="18dp"
             android:paddingBottom="24dp"
+            android:tag="n"
             android:text="기타"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/regi3_extra"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/nanumsquareb"
+            android:text="어떤 것을 할 수 있으신가요?"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquarer"
+                android:hint="키워드를 공백 기준으로 입력해주세요!"
+                android:id="@+id/regi3_extra_txt"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
     </LinearLayout>
 
 
     <TextView
+        android:id="@+id/regi3_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:id="@+id/regi3_result"/>
+        android:visibility="gone" />
 
 </LinearLayout>

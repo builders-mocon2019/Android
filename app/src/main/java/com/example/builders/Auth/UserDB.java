@@ -14,17 +14,19 @@ public class UserDB {
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    public void add(Context context, UserModel data){ //DB에 값을 추가하는 함수
+    public void add(Context context, UserModel data) { //DB에 값을 추가하는 함수
         SharedPreferences.Editor editor = getSharedPreferences(context).edit(); //SharedPreference 에디터 생성
         //에디터에 받아온 값 저장
-        editor.putString("nickname", data.getNickname())
-        .putString("email", data.getEmail())
-        .putString("userkey", data.getUserkey())
-        .putString("intro", data.getIntro())
-        .putInt("profilenum", data.getProfilenum())
-        .apply(); //SharedPreference에 반영
-}
-    public void setSettingColor(Context context, String color){ //채팅방 색상 설정
+        editor.putString("name", data.getName())
+                .putString("birth", data.getBirth())
+                .putString("id", data.getId())
+                .putString("can", data.getCan())
+                .putString("want", data.getWant())
+                .putString("team", data.getTeam())
+                .apply(); //SharedPreference에 반영
+    }
+
+    /*public void setSettingColor(Context context, String color){ //채팅방 색상 설정
         SharedPreferences.Editor editor = getSharedPreferences(context).edit(); //에디터 생성
         editor.putString("setting_color", color) //에디터에 받아온 값 저장
         .apply(); //값 반영
@@ -51,23 +53,33 @@ public class UserDB {
 
     public Boolean isSettingVib(Context context){ //진동 여부 호출
         return getSharedPreferences(context).getBoolean("setting_vib", true); //진동 여부 반환
-    }
+    }*/
 
 
     //유저 정보 반환 함수
-    public String getUserNickname(Context context){
-        return getSharedPreferences(context).getString("nickname", "");
+    public String getUserName(Context context) {
+        return getSharedPreferences(context).getString("name", "");
     }
-    public String getUserEmail(Context context){
-        return getSharedPreferences(context).getString("email", "");
+
+    public String getUserBirth(Context context) {
+        return getSharedPreferences(context).getString("birth", "");
     }
-    public String getUserKey(Context context){
-        return getSharedPreferences(context).getString("userkey", "");
+
+    public String getUserId(Context context) {
+        return getSharedPreferences(context).getString("id", "");
     }
-    public String getIntro(Context context){
-        return getSharedPreferences(context).getString("intro", "");
+
+    public String getUserCan(Context context) {
+        return getSharedPreferences(context).getString("can", "");
     }
-    public int getProfilenum(Context context){
-        return getSharedPreferences(context).getInt("profilenum", 0);
+
+    public String getUserWant(Context context) {
+        return getSharedPreferences(context).getString("want", "");
     }
+
+    public String getUserTeam(Context context) {
+        return getSharedPreferences(context).getString("team", "");
+    }
+
+
 }

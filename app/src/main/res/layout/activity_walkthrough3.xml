@@ -3,15 +3,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/walk3"
-    android:background="@color/materialGreen"
+    android:background="#f38699"
+    android:orientation="vertical"
     android:gravity="center">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/walk_3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="나만의 포트폴리오"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:fontFamily="@font/nanumsquareeb"
+        android:gravity="center"
+        android:layout_marginTop="48dp"
+        android:textSize="28sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="팀원들에게 나를 소개하는 \n포트폴리오를 만들어 보세요"
+        android:textColor="@android:color/white"
+        android:gravity="center"
         android:fontFamily="@font/nanumsquarer"
-        android:text="나만의 포트폴리오를 만드세요"/>
+        android:layout_marginTop="20dp"
+        android:textSize="20sp" />
 
 </LinearLayout>

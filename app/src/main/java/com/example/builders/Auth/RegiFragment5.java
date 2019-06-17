@@ -3,6 +3,7 @@ package com.example.builders.Auth;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -48,13 +49,16 @@ public class RegiFragment5 extends Fragment {
             switch (v.getId()) {
                 case R.id.regi5_1:
                     if (r51.getTag().equals("n")) {
-                        r51.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r51.setTextColor(Color.WHITE);
                         r51.setTag("y");
-                        r52.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        background = (TransitionDrawable) r52.getBackground();
+                        if (r52.getTag().equals("y")) background.reverseTransition(200);
                         r52.setTextColor(Color.BLACK);
                         r52.setTag("n");
-                        r53.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        background = (TransitionDrawable) r53.getBackground();
+                        if (r53.getTag().equals("y")) background.reverseTransition(200);
                         r53.setTextColor(Color.BLACK);
                         r53.setTag("n");
                     }
@@ -62,13 +66,16 @@ public class RegiFragment5 extends Fragment {
                     break;
                 case R.id.regi5_2:
                     if (r52.getTag().equals("n")) {
-                        r52.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r52.setTextColor(Color.WHITE);
                         r52.setTag("y");
-                        r51.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        background = (TransitionDrawable) r51.getBackground();
+                        if (r51.getTag().equals("y")) background.reverseTransition(200);
                         r51.setTextColor(Color.BLACK);
                         r51.setTag("n");
-                        r53.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        background = (TransitionDrawable) r53.getBackground();
+                        if (r53.getTag().equals("y")) background.reverseTransition(200);
                         r53.setTextColor(Color.BLACK);
                         r53.setTag("n");
                     }
@@ -76,13 +83,16 @@ public class RegiFragment5 extends Fragment {
                     break;
                 case R.id.regi5_3:
                     if (r53.getTag().equals("n")) {
-                        r53.setBackground(getResources().getDrawable(R.drawable.btn_gradient));
+                        TransitionDrawable background = (TransitionDrawable) v.getBackground();
+                        background.startTransition(200);
                         r53.setTextColor(Color.WHITE);
                         r53.setTag("y");
-                        r51.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        background = (TransitionDrawable) r51.getBackground();
+                        if (r51.getTag().equals("y")) background.reverseTransition(200);
                         r51.setTextColor(Color.BLACK);
                         r51.setTag("n");
-                        r52.setBackground(getResources().getDrawable(R.drawable.login_textbox));
+                        background = (TransitionDrawable) r52.getBackground();
+                        if (r52.getTag().equals("y")) background.reverseTransition(200);
                         r52.setTextColor(Color.BLACK);
                         r52.setTag("n");
                     }

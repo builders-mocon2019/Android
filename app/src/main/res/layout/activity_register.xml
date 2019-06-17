@@ -21,11 +21,32 @@
         android:text="5단계 중 1단계"
         android:fontFamily="@font/nanumsquarer"
         android:layout_gravity="end"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="15sp"
         android:id="@+id/regiIndiTxt"
         />
-    <ProgressBar
+
+    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/white"
+        app:rcProgress="1"
+        android:id="@+id/regi_progress"
+        app:rcMax="5"
+        app:rcRadius="12dp"
+        app:rcBackgroundPadding="0dp"
+        app:rcReverse="false"
+        app:rcProgressColor="@color/colorPrimary"
+        app:rcSecondaryProgressColor="@color/colorPrimary"
+        app:rcBackgroundColor="@color/materialGray">
+
+    </com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar>
+    <!--<ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,11 +54,14 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/login_textbox"
         android:max="5"
         android:progress="1"
-        android:elevation="4dp"
+        android:elevation="2dp"
         android:id="@+id/regi_progress"
-        android:progressDrawable="@drawable/prog_gradient" />
+        android:progressDrawable="@drawable/prog_gradient" />-->
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,8 +73,8 @@
         android:background="@drawable/login_gradient"
         android:text="다음"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/nanumsquarer"
-        android:textSize="18sp"
+        android:fontFamily="@font/nanumsquareb"
+        android:textSize="20sp"
         android:id="@+id/regi_nextBtn"/>
 
 </LinearLayout>

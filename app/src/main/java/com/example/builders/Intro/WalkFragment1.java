@@ -35,7 +35,7 @@ public class WalkFragment1 extends AppIntroBaseFragment implements ISlideBackgro
     @Override
     public int getDefaultBackgroundColor() {
         // Return the default background color of the slide.
-        return getResources().getColor(R.color.materialRed);
+        return Color.parseColor("#f9cf69");
     }
 
     @Override

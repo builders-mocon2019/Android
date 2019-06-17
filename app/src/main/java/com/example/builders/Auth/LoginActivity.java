@@ -7,9 +7,15 @@ import android.graphics.Shader;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.view.animation.LinearOutSlowInInterpolator;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.PasswordTransformationMethod;
+import android.transition.Transition;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -24,8 +30,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.transitionseverywhere.Fade;
+import com.transitionseverywhere.TransitionSet;
 
-public class LoginActivity extends Activity {
+
+public class LoginActivity extends AppCompatActivity {
 
     //Login 기능을 수행하는 Activity
 
@@ -34,11 +43,12 @@ public class LoginActivity extends Activity {
     ProgressBar loginProgress;
     Button loginBtn;
     TextView regiBtn, loginTxt;
-    LinearLayout idBox, pwBox;
+    LinearLayout idBox, pwBox, container1, container2, container3;
 
     //Firebase Authentication 가져오기
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
+
 
 
     @Override
@@ -52,6 +62,22 @@ public class LoginActivity extends Activity {
                 new int[]{getResources().getColor(R.color.gradientOrange),getResources().getColor(R.color.gradientYellow)},
                 new float[]{0, 1}, Shader.TileMode.CLAMP);
         loginTxt.getPaint().setShader(textShader);
+
+        container1 = findViewById(R.id.login_container1);
+        container2 = findViewById(R.id.login_container2);
+        container3 = findViewById(R.id.login_container3);
+
+        Animation animation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
+        container1.startAnimation(animation);
+
+        Animation animation2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
+        animation2.setStartOffset(700);
+        container2.startAnimation(animation2);
+
+        Animation animation3 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
+        animation3.setStartOffset(1400);
+        container3.startAnimation(animation3);
+
 
         firebaseAuth = FirebaseAuth.getInstance(); //Firebase 현재 Auth 정보 가져오기
 
@@ -146,7 +172,7 @@ public class LoginActivity extends Activity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) { //로그인에 성공했다면
                             Toast.makeText(getApplicationContext(), "안녕하세요, "+id.getText().toString()+"!", Toast.LENGTH_SHORT).show(); //로그인 성공 토스트
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            startActivity(new Intent(LoginActivity.this, DBLoadActivity.class));
                             finish(); //DBLoadActivity 실행 후 종료
                         }
                         else {

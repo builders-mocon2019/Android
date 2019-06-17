@@ -5,64 +5,68 @@ public class UserModel {
     //유저 정보를 담을 양식 클래스
 
     //유저 정보 저장에 필요한 변수 선언
-    private String nickname, email, userkey, intro;
-    int profilenum;
+    private String name, birth, id, can, want, team;
 
     public UserModel(){}
 
-    public UserModel(String nickname, String email, String userkey, String intro, int profilenum){ //클래스 양식 지정
-        this.nickname = nickname;
-        this.email = email;
-        this.userkey = userkey;
-        this.intro=intro;
-        this.profilenum=profilenum;
+    public UserModel(String name, String birth, String id, String can, String want, String team){ //클래스 양식 지정
+        this.name = name;
+        this.birth = birth;
+        this.id = id;
+        this.can = can;
+        this.want = want;
+        this.team = team;
     }
 
 
     //Getter & Setter
-    public String getIntro() {
-        return intro;
+
+
+    public String getName() {
+        return name;
     }
 
-    public void setIntro(String intro) {
-        this.intro = intro;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getProfilenum() {
-        return profilenum;
+    public String getBirth() {
+        return birth;
     }
 
-    public void setProfilenum(int profilenum) {
-        this.profilenum = profilenum;
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getId() {
+        return id;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCan() {
+        return can;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCan(String can) {
+        this.can = can;
     }
 
-    public String getUserkey() {
-        return userkey;
+    public String getWant() {
+        return want;
     }
 
-    public void setUserkey(String userkey) {
-        this.userkey = userkey;
+    public void setWant(String want) {
+        this.want = want;
     }
 
+    public String getTeam() {
+        return team;
+    }
 
-
-
-
-
+    public void setTeam(String team) {
+        this.team = team;
+    }
 }

@@ -24,8 +24,8 @@
 
     <style name="DatePickerStyle">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColorPrimary">@color/colorPrimary</item>
-        <item name="android:colorControlNormal">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:colorControlNormal">#000000</item>
     </style>
 
 </resources>

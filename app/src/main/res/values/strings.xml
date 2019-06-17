@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Builders</string>
+    <string name="facebook_app_id">747466252336146</string>
+    <string name="fb_login_protocol_scheme">fb747466252336146</string>
+
 </resources>
