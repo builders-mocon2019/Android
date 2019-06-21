@@ -1,8 +1,23 @@
 package com.example.builders;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationMenu;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,20 +43,62 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        UserDB userDB = new UserDB();
-        textView = findViewById(R.id.maintxt);
-        textView.setText(userDB.getUserName(this)+userDB.getUserBirth(this)+userDB.getUserId(this)+userDB.getUserCan(this)+userDB.getUserWant(this)+userDB.getUserTeam(this));
-        logoutBtn = findViewById(R.id.logoutBtn);
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
+
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+//
+//        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//        getSupportActionBar().setCustomView(R.layout.toolbar_layout);
+
+//        final ActionBar abar = getSupportActionBar();
+//        //abar.setBackgroundDrawable(getResources().getDrawable("#ffffff"));//line under the action bar
+//        View viewActionBar = getLayoutInflater().inflate(R.layout.toolbar_layout, null);
+//        ActionBar.LayoutParams params = new ActionBar.LayoutParams(//Center the textview in the ActionBar !
+//                ActionBar.LayoutParams.WRAP_CONTENT,
+//                ActionBar.LayoutParams.MATCH_PARENT,
+//                Gravity.CENTER);
+        TextView textviewTitle = findViewById(R.id.action_title);
+
+        Shader textShader = new LinearGradient(150, 0, 0, textviewTitle.getPaint().getTextSize(),
+                new int[]{getResources().getColor(R.color.gradientOrange), getResources().getColor(R.color.gradientYellow)},
+                new float[]{0, 1}, Shader.TileMode.CLAMP);
+        textviewTitle.getPaint().setShader(textShader);
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottombar);
+        bottomNavigationView.setBackgroundResource(R.color.colorWhite);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut(); //Firebase의 현재 Auth 항목을 가져와 로그아웃 실행
-                startActivity(new Intent(MainActivity.this, LoginActivity.class)); //로그인 액티비티 실행
-                finish(); //현재 액티비티 종료
-//                RegisterDialog registerDialog = new RegisterDialog(MainActivity.this);
-//                registerDialog.setCancelable(false);
-//                registerDialog.show();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()) {
+                    case R.id.action_1:
+                        selectedFragment = MainFragment1.newInstance();
+                        break;
+                    case R.id.action_2:
+                        selectedFragment = MainFragment2.newInstance();
+                        break;
+                    case R.id.action_3:
+                        selectedFragment = MainFragment3.newInstance();
+                        break;
+                    case R.id.action_4:
+                        selectedFragment = MainFragment4.newInstance();
+                        break;
+                }
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.main_frame, selectedFragment);
+                transaction.commit();
+                return true;
             }
         });
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.main_frame, MainFragment1.newInstance());
+        transaction.commit();
+
+
+
     }
 }
+

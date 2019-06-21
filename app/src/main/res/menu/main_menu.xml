@@ -6,13 +6,13 @@
         android:title="홈"
         android:icon="@drawable/icon_home" />
     <item android:id="@+id/action_2"
-        android:title="홈"
-        android:icon="@drawable/icon_home" />
+        android:title="관심 있어요"
+        android:icon="@drawable/icon_favorite" />
     <item android:id="@+id/action_3"
-        android:title="홈"
-        android:icon="@drawable/icon_home" />
+        android:title="알림"
+        android:icon="@drawable/icon_alarm" />
     <item android:id="@+id/action_4"
-        android:title="홈"
-        android:icon="@drawable/icon_home" />
+        android:title="내 정보"
+        android:icon="@drawable/icon_person" />
 
 </menu>

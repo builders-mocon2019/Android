@@ -12,4 +12,5 @@
     <color name="gradientRed">#EB3A58</color>
     <color name="gradientOrange">#FD690A</color>
     <color name="gradientYellow">#F5B20E</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>
