@@ -2,6 +2,7 @@ package com.example.builders.Auth;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.TransitionDrawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -224,6 +225,9 @@ public class RegisterActivity extends AppCompatActivity {
         team = regiTeam.getText().toString();
 
         if (!team.equals("")) {
+            nextBtn.setTextColor(getColor(R.color.colorPrimary));
+            final TransitionDrawable background = (TransitionDrawable) nextBtn.getBackground();
+            background.startTransition(300);
             FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();// FireBase 현재 Auth 정보 가져오기
             firebaseAuth.createUserWithEmailAndPassword(id, pw) //Firebase에 회원가입 요청
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() { //작업 완료 리스너
@@ -238,7 +242,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 registerDialog.show();
 
                             } else { //회원가입에 실패했다면
-                                Toast.makeText(getApplicationContext(), "회원가입 실패", Toast.LENGTH_SHORT).show(); //회원가입 실패 토스트
+                                Toast.makeText(getApplicationContext(), "회원가입 실패, 이미 가입된 계정인지 확인하세요", Toast.LENGTH_SHORT).show(); //회원가입 실패 토스트
+                                nextBtn.setTextColor(getColor(R.color.colorWhite));
+                                background.reverseTransition(300);
                             }
                         }
                     });

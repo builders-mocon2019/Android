@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="팀 빌딩 앱 'Builders'... 글에 \n유혜진 님이 댓글을 남겼습니다." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="제 19회 앱잼... 글의 \n회원님의 댓글에 답글이 있습니다.." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="팀 빌딩 앱 'Builders'... 글에 \n이채은 님이 관심 있습니다." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="팀 빌딩 앱 'Builders'... 글에 \n조민준 님이 댓글을 남겼습니다." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -162,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="'디자인' 카테고리에 새로운 글이\n업로드 되었습니다. 확인해보세요!" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -186,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="6월 21일 홍대 버스킹... 글의 \n회원님의 댓글에 답글이 있습니다." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -210,7 +210,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="팀 빌딩 앱 'Builders'... 글에 \n김상현 님이 댓글을 남겼습니다." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -234,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquareb"
-                android:text="팀 빌딩 앱 'Builders'... 글에 \n사용자 님이 댓글을 남겼습니다." />
+                android:text="팀 빌딩 앱 'Builders'... 글에 \n유용찬 님이 댓글을 남겼습니다." />
 
             <TextView
                 android:layout_width="wrap_content"

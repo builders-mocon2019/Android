@@ -70,7 +70,7 @@
         android:layout_marginBottom="24dp"
         android:paddingStart="36dp"
         android:paddingEnd="36dp"
-        android:background="@drawable/login_gradient"
+        android:background="@drawable/login_transition"
         android:text="다음"
         android:textColor="@android:color/white"
         android:fontFamily="@font/nanumsquareb"

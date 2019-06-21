@@ -20,6 +20,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.builders.Auth.LoginActivity;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button logoutBtn;
     TextView textView;
+    ImageView actionChat, actionWrite;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -96,6 +98,24 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main_frame, MainFragment1.newInstance());
         transaction.commit();
+
+        actionChat = findViewById(R.id.action_chat);
+        actionChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        actionWrite = findViewById(R.id.action_write);
+        actionWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, WriteActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

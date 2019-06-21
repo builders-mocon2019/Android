@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -33,6 +34,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.transitionseverywhere.Fade;
 import com.transitionseverywhere.TransitionSet;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,8 +45,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText id, password;
     ProgressBar loginProgress;
     Button loginBtn;
-    TextView regiBtn, loginTxt;
+    TextView regiBtn, loginTxt, findPwBtn;
     LinearLayout idBox, pwBox, container1, container2, container3;
+    CircleImageView facebook, twitter, google;
 
     //Firebase Authentication 가져오기
     private FirebaseAuth firebaseAuth;
@@ -59,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
         loginTxt = findViewById(R.id.login_txt);
         Shader textShader=new LinearGradient(150, 0, 0, loginTxt.getPaint().getTextSize(),
-                new int[]{getResources().getColor(R.color.gradientOrange),getResources().getColor(R.color.gradientYellow)},
+                new int[]{getColor(R.color.gradientOrange),getColor(R.color.gradientYellow)},
                 new float[]{0, 1}, Shader.TileMode.CLAMP);
         loginTxt.getPaint().setShader(textShader);
 
@@ -103,6 +107,7 @@ public class LoginActivity extends AppCompatActivity {
         //Button findViewById
         loginBtn = findViewById(R.id.btn_login);
         regiBtn = findViewById(R.id.btn_newaccount);
+        findPwBtn = findViewById(R.id.btn_findpassword);
 
         //EditText findViewById
         id = findViewById(R.id.login_id);
@@ -130,6 +135,35 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        findPwBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "개발중인 기능입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        facebook = findViewById(R.id.login_facebook);
+        twitter = findViewById(R.id.login_twitter);
+        google = findViewById(R.id.login_google);
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "개발중인 기능입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "개발중인 기능입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "개발중인 기능입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         idBox = findViewById(R.id.id_box);
         pwBox = findViewById(R.id.pw_box);
@@ -146,6 +180,8 @@ public class LoginActivity extends AppCompatActivity {
                 password.requestFocus();
             }
         });
+
+
     }
 
     @Override
@@ -164,8 +200,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login(String email, String password) { //로그인 함수
 
-        loginProgress = findViewById(R.id.progress_login);//ProgressBar findViewById
-        loginProgress.setVisibility(View.VISIBLE); //ProgressBar 표시
+        loginBtn.setTextColor(getColor(R.color.colorPrimary));
+        final TransitionDrawable background = (TransitionDrawable) loginBtn.getBackground();
+        background.startTransition(300);
+
+        //loginProgress = findViewById(R.id.progress_login);//ProgressBar findViewById
+        //loginProgress.setVisibility(View.VISIBLE); //ProgressBar 표시
         firebaseAuth.signInWithEmailAndPassword(email, password) //FireBase에 로그인 요청
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() { //작업 완료 리스너
                     @Override
@@ -177,7 +217,9 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(getApplicationContext(), "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show(); //로그인 실패 토스트
-                            loginProgress.setVisibility(View.GONE); //ProgressBar 숨기기
+                            //loginProgress.setVisibility(View.GONE); //ProgressBar 숨기기
+                            loginBtn.setTextColor(getColor(R.color.colorWhite));
+                            background.reverseTransition(300);
                         }
                     }
                 });

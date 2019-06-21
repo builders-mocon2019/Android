@@ -265,7 +265,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:fontFamily="@font/nanumsquareb"
-            android:text="어떤 것을 할 수 있으신가요?"
+            android:text="어떤 사람을 원하시나요?"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
@@ -277,7 +277,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquarer"
-                android:hint="키워드를 공백 기준으로 입력해주세요!"
+                android:hint="키워드를 공백으로 구분해서 입력해주세요!"
                 android:id="@+id/regi4_extra_txt"
                 android:singleLine="true"
                 android:textSize="18sp" />

@@ -154,7 +154,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/login_gradient"
+            android:background="@drawable/login_transition"
             android:fontFamily="@font/nanumsquareb"
             android:text="LOGIN"
             android:textAllCaps="false"
@@ -245,7 +245,7 @@
                 android:fontFamily="@font/nanumsquarer"
                 android:paddingStart="22dp"
                 android:paddingEnd="22dp"
-                android:text="OR"
+                android:text="Sign Up With"
                 android:textSize="15sp" />
         </RelativeLayout>
 
@@ -257,20 +257,32 @@
 
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="46dp"
-                android:layout_height="46dp"
+                android:id="@+id/login_facebook"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/facebook_icon" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="46dp"
-                android:layout_height="46dp"
+                android:id="@+id/login_twitter"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/twitter_icon" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="46dp"
-                android:layout_height="46dp"
+                android:id="@+id/login_google"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/google_icon" />
 
