@@ -1,6 +1,5 @@
 package com.example.builders.Auth;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -8,12 +7,9 @@ import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.PasswordTransformationMethod;
-import android.transition.Transition;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -24,15 +20,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.builders.MainActivity;
 import com.example.builders.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.transitionseverywhere.Fade;
-import com.transitionseverywhere.TransitionSet;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -93,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(user != null){ //만약 유저 상태가 null이 아니라면(로그인이 되어있는 상태)
                     Toast.makeText(getApplicationContext(), "안녕하세요, "+user.getEmail()+"!", Toast.LENGTH_SHORT).show(); //로그인 성공 토스트
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, DBLoadActivity.class));
                     finish(); //DBLoadActivity로 이동 후 종료
 
                 }

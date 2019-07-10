@@ -1,40 +1,32 @@
-package com.example.builders;
+package com.example.builders.Main;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.builders.Auth.LoginActivity;
-import com.example.builders.Auth.RegisterActivity;
-import com.example.builders.Auth.RegisterDialog;
-import com.example.builders.Auth.UserDB;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.builders.Chat.ChatActivity;
+import com.example.builders.Main1.MainFragment1;
+import com.example.builders.Main2.MainFragment2;
+import com.example.builders.Main3.MainFragment3;
+import com.example.builders.Main4.MainFragment4;
+import com.example.builders.R;
+import com.example.builders.Write.WriteActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button logoutBtn;
-    TextView textView;
     ImageView actionChat, actionWrite;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -63,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textviewTitle = findViewById(R.id.action_title);
 
         Shader textShader = new LinearGradient(150, 0, 0, textviewTitle.getPaint().getTextSize(),
-                new int[]{getResources().getColor(R.color.gradientOrange), getResources().getColor(R.color.gradientYellow)},
+                new int[]{getColor(R.color.gradientOrange), getColor(R.color.gradientYellow)},
                 new float[]{0, 1}, Shader.TileMode.CLAMP);
         textviewTitle.getPaint().setShader(textShader);
 

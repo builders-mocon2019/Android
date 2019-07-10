@@ -105,8 +105,8 @@ public class RegiFragment5 extends Fragment {
 
     void setResult(){
         regiResult.setText("");
-        if(r51.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r51.getText().toString());
-        else if(r52.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r52.getText().toString());
-        else if(r53.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r53.getText().toString());
+        if(r51.getTag()=="y") regiResult.setText(r51.getText().toString());
+        else if(r52.getTag()=="y") regiResult.setText(r52.getText().toString());
+        else if(r53.getTag()=="y") regiResult.setText(r53.getText().toString());
     }
 }

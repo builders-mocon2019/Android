@@ -1,4 +1,4 @@
-package com.example.builders;
+package com.example.builders.Chat;
 
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.builders.R;
 
 
 public class ChatActivity extends AppCompatActivity {

@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".WriteActivity">
+    tools:context=".Write.WriteActivity">
 
     <RelativeLayout
-        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:id="@+id/write_backBtn"
@@ -61,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,11 +80,13 @@
                     android:textSize="28sp" />
 
                 <EditText
+                    android:id="@+id/write_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:fontFamily="@font/nanumsquarer"
                     android:hint="30자 이내로 작성해주세요"
+                    android:maxLength="30"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -106,10 +109,12 @@
                     android:textSize="28sp" />
 
                 <EditText
+                    android:id="@+id/write_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:fontFamily="@font/nanumsquarer"
+                    android:gravity="top"
                     android:hint="어떤 일을 해야 하고, 어떤 사람을 원하는지 알리고 싶은 내용을 작성해주세요!"
                     android:textSize="16sp" />
 
@@ -139,7 +144,7 @@
                     android:layout_marginEnd="12dp">
 
                     <TextView
-                        android:id="@+id/main_user_1"
+                        android:id="@+id/write_want_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -161,7 +166,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/main_user_2"
+                        android:id="@+id/write_want_2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -183,7 +188,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/main_user_3"
+                        android:id="@+id/write_want_3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -212,7 +217,7 @@
                     android:layout_marginEnd="12dp">
 
                     <TextView
-                        android:id="@+id/main_user_4"
+                        android:id="@+id/write_want_4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -220,7 +225,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="4dp"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_gradient"
+                        android:background="@drawable/btn_transition"
                         android:elevation="2dp"
                         android:fontFamily="@font/nanumsquareb"
                         android:gravity="center"
@@ -230,11 +235,11 @@
                         android:paddingBottom="10dp"
                         android:tag="n"
                         android:text="디자인"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/main_user_5"
+                        android:id="@+id/write_want_5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -242,7 +247,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="4dp"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_gradient"
+                        android:background="@drawable/btn_transition"
                         android:elevation="2dp"
                         android:fontFamily="@font/nanumsquareb"
                         android:gravity="center"
@@ -252,11 +257,11 @@
                         android:paddingBottom="10dp"
                         android:tag="n"
                         android:text="개발"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/main_user_6"
+                        android:id="@+id/write_want_6"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -285,7 +290,7 @@
                     android:layout_marginEnd="12dp">
 
                     <TextView
-                        android:id="@+id/main_user_7"
+                        android:id="@+id/write_want_7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -307,7 +312,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/main_user_8"
+                        android:id="@+id/write_want_8"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -329,7 +334,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/main_user_9"
+                        android:id="@+id/write_want_9"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -381,7 +386,6 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nanumsquarer"
                             android:hint="키워드를 공백 기준으로 입력해주세요!"
-
                             android:singleLine="true"
                             android:textSize="18sp" />
 
@@ -389,6 +393,12 @@
 
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/write_want_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -410,7 +420,7 @@
                     android:textSize="28sp" />
 
                 <TextView
-                    android:id="@+id/regi5_1"
+                    android:id="@+id/write_team_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
@@ -427,24 +437,24 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/regi5_2"
+                    android:id="@+id/write_team_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
                     android:layout_marginEnd="28dp"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/btn_gradient"
+                    android:background="@drawable/btn_transition"
                     android:elevation="2dp"
                     android:fontFamily="@font/nanumsquarer"
                     android:gravity="center"
                     android:padding="12dp"
                     android:tag="n"
                     android:text="가볍게 취미를 함께 할 사람이 필요해요"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/regi5_3"
+                    android:id="@+id/write_team_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
@@ -461,6 +471,11 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/write_team_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -507,9 +522,11 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/write_uploadBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@drawable/upload_textbox"
                     android:fontFamily="@font/nanumsquareb"
                     android:text="올리기"

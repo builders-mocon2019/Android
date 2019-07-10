@@ -23,7 +23,7 @@ public class IntroActivity extends AppCompatActivity {
 
         intro = findViewById(R.id.intro_txt);
         Shader textShader=new LinearGradient(150, 0, 0, intro.getPaint().getTextSize(),
-                new int[]{getResources().getColor(R.color.gradientOrange),getResources().getColor(R.color.gradientYellow)},
+                new int[]{getColor(R.color.gradientOrange),getColor(R.color.gradientYellow)},
                 new float[]{0, 1}, Shader.TileMode.CLAMP);
         intro.getPaint().setShader(textShader);
 
@@ -31,9 +31,9 @@ public class IntroActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(IntroActivity.this, WalkthroughActivity.class);
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.fade_in_s, R.anim.fade_out_s); //화면 전환 효과
+                //overridePendingTransition(R.anim.fade_in_s, R.anim.fade_out_s); //화면 전환 효과
                 finish();
             }
         }, 1500);

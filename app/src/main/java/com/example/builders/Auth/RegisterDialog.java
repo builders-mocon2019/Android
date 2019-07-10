@@ -8,15 +8,13 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.builders.MainActivity;
+import com.example.builders.Intro.WalkFragment1;
+import com.example.builders.Intro.WalkthroughActivity;
 import com.example.builders.R;
 
 public class RegisterDialog extends Dialog {
@@ -38,10 +36,20 @@ public class RegisterDialog extends Dialog {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(c, MainActivity.class);
+                Intent intent = new Intent(c, DBLoadActivity.class);
                 c.startActivity(intent);
                 ((Activity)c).finish();
                 //cancel();
+            }
+        });
+
+        Button walkBtn = findViewById(R.id.regi_dialog_walk);
+        walkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(c, WalkthroughActivity.class);
+                c.startActivity(intent);
+                ((Activity)c).finish();
             }
         });
 

@@ -142,8 +142,8 @@
                 android:text="01일"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
-
         </LinearLayout>
+
 
 
     </LinearLayout>
@@ -152,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/regi1_result"
-        android:text="2003년 5월 5일"
+        android:text="2019년 1월 1일"
         android:visibility="gone"/>
 
 

@@ -213,7 +213,7 @@ public class RegiFragment3 extends Fragment {
         if(r36.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r36.getText().toString());
         if(r37.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r37.getText().toString());
         if(r38.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+r38.getText().toString());
-        if(r39.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+rextra_txt.getText().toString());
+        if(r39.getTag()=="y") regiResult.setText(regiResult.getText().toString()+" "+"기타 "+rextra_txt.getText().toString());
     }
 
 }

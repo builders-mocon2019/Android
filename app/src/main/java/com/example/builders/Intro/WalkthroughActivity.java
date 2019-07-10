@@ -81,6 +81,7 @@ public class WalkthroughActivity extends AppIntro {
     public void onSkipPressed(Fragment currentFragment) {
         Intent intent = new Intent(WalkthroughActivity.this, LoginActivity.class);
         startActivity(intent);
+        finish();
         //overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         //super.onSkipPressed(currentFragment);
 
@@ -92,7 +93,7 @@ public class WalkthroughActivity extends AppIntro {
 
         Intent intent = new Intent(WalkthroughActivity.this, LoginActivity.class);
         startActivity(intent);
-
+        finish();
         //super.onDonePressed(currentFragment);
         // Do something when users tap on Done button.
     }

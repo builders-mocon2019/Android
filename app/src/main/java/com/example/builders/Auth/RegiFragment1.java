@@ -1,7 +1,6 @@
 package com.example.builders.Auth;
 
 
-import android.app.DatePickerDialog;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
@@ -13,12 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.builders.R;
+import com.tsongkha.spinnerdatepicker.DatePicker;
+import com.tsongkha.spinnerdatepicker.DatePickerDialog;
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
 
 public class RegiFragment1 extends Fragment implements com.tsongkha.spinnerdatepicker.DatePickerDialog.OnDateSetListener {
@@ -51,16 +51,21 @@ public class RegiFragment1 extends Fragment implements com.tsongkha.spinnerdatep
             public void onClick(View v) {
                 new SpinnerDatePickerDialogBuilder()
                         .context(getContext())
-                        .callback(new com.tsongkha.spinnerdatepicker.DatePickerDialog.OnDateSetListener() {
+                        .callback(new DatePickerDialog.OnDateSetListener() {
                             @Override
-                            public void onDateSet(com.tsongkha.spinnerdatepicker.DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                nowYear = year;
-                                nowMonth = monthOfYear;
-                                nowDay = dayOfMonth;
-                                regiBirthYear.setText(year + "년");
-                                regiBirthMonth.setText(((monthOfYear+1)<10?"0":"") + (monthOfYear + 1) + "월");
-                                regiBirthDay.setText(((dayOfMonth)<10?"0":"") + dayOfMonth + "일");
-                                regiResult.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                if(year>2019){
+                                    Toast.makeText(getContext(), "현재 연도 이후로 설정할 수 없습니다.", Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                    nowYear = year;
+                                    nowMonth = monthOfYear;
+                                    nowDay = dayOfMonth;
+                                    regiBirthYear.setText(year + "년");
+                                    regiBirthMonth.setText(((monthOfYear+1)<10?"0":"") + (monthOfYear + 1) + "월");
+                                    regiBirthDay.setText(((dayOfMonth)<10?"0":"") + dayOfMonth + "일");
+                                    regiResult.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
+                                }
                             }
                         })
                         .spinnerTheme(R.style.DatePickerStyle)
