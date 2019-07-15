@@ -11,11 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Write.WriteActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden">
 
-        </activity>
+        <activity android:name=".Chat.ChatPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main1.ArticleActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".Write.WriteActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Intro.WalkthroughActivity"
             android:screenOrientation="portrait"
@@ -50,7 +57,7 @@
         <activity
             android:name=".Chat.ChatActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

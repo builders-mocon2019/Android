@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,8 +19,8 @@
             android:id="@+id/main1_menu_cate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/login_textbox"
             android:elevation="1dp"
@@ -32,9 +34,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="6dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginEnd="36dp"
             android:orientation="horizontal">
 
             <TextView
@@ -106,12 +108,16 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/materialGray" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main1_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        tools:listitem="@layout/item_main_article">
+        tools:listitem="@layout/item_main_article"> 
 
     </android.support.v7.widget.RecyclerView>
 

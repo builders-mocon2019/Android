@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Main1.ArticleActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:id="@+id/article_backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/nanumsquarer"
+                android:text="뒤로가기"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/article_top_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/nanumsquareeb"
+            android:text="게시물"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#eeeeee" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:background="@android:color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/article_tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumsquareeb"
+                    android:gravity="center"
+                    android:text="팀원 정보"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="64dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#eeeeee" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/profile1" />
+
+                <TextView
+                    android:id="@+id/article_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/nanumsquareeb"
+                    android:text="정찬효"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/article_want"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/nanumsquarer"
+                    android:text="디자인 개발" />
+
+                <TextView
+                    android:id="@+id/article_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nanumsquarer"
+                    android:text="공모전 / 대회 팀원이 필요해요" />
+
+
+                <TextView
+                    android:id="@+id/article_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/nanumsquareeb"
+                    android:gravity="center"
+                    android:text="팀빌딩 제목"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="64dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#eeeeee" />
+
+
+                <TextView
+                    android:id="@+id/article_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/nanumsquareeb"
+                    android:gravity="center"
+                    android:text="팀 빌딩 앱 Builders와 함께할 개발자를 구합니다!"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/article_tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/nanumsquareeb"
+                    android:gravity="center"
+                    android:text="팀빌딩 내용"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="64dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#eeeeee" />
+
+                <TextView
+                    android:id="@+id/article_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/nanumsquarer"
+                    android:gravity="center"
+                    android:text="1. 우리들의 팀빌딩 플랫폼, Builders\n
+- Builders는 마음이 통하는 누구나 팀으로 이어주는 팀 빌딩 플랫폼입니다.\n
+\n
+2. 다양한 분야에서 함께할 팀원을 모집하세요\n
+- 공모전, 대회, 봉사, 공연 등 분야에 제한받지 않는 팀 빌딩을 경험하세요.\n
+\n
+3. 나만의 포트폴리오를 만드세요\n
+- 팀원에게 나를 소개하는 포트폴리오를 만들어 보세요.\n"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/article_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/nanumsquareeb"
+                    android:gravity="center"
+                    android:text="포트폴리오"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="64dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#eeeeee" />
+
+                <TextView
+                    android:id="@+id/article_port"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/cate_textbox"
+                    android:fontFamily="@font/nanumsquarer"
+                    android:padding="12dp"
+                    android:text="https://github.com/roian6"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#eeeeee" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/article_chatBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_mail_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:text="1:1 대화"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/article_commentBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_chat_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:text="댓글"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

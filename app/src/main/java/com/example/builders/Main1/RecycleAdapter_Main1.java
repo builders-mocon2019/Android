@@ -1,5 +1,6 @@
 package com.example.builders.Main1;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -47,7 +48,7 @@ public class RecycleAdapter_Main1 extends RecyclerView.Adapter<RecycleHolder_Mai
     @Override
     public void onBindViewHolder(@NonNull RecycleHolder_Main1 holder, int position) {
 
-        ArticleModel item = items.get(position); //리스트의 position 위치 값을 com.example.builders.Main.ArticleModel 양식으로 가져오기
+        final ArticleModel item = items.get(position); //리스트의 position 위치 값을 com.example.builders.Main.ArticleModel 양식으로 가져오기
 
         //가져온 값을 holder에 대입
         holder.name.setText(item.getName());
@@ -58,6 +59,21 @@ public class RecycleAdapter_Main1 extends RecyclerView.Adapter<RecycleHolder_Mai
             @Override
             public void onClick(View view) {
                 
+            }
+        });
+
+        holder.getMoreButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ArticleActivity.class);
+
+                intent.putExtra("article_name", item.getName());
+                intent.putExtra("article_want", item.getWant());
+                intent.putExtra("article_team", item.getTeam());
+                intent.putExtra("article_title", item.getTitle());
+                intent.putExtra("article_text", item.getText());
+
+                view.getContext().startActivity(intent);
             }
         });
 

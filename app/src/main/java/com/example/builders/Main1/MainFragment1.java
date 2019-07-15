@@ -1,8 +1,13 @@
 package com.example.builders.Main1;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.builders.Auth.RegisterActivity;
+import com.example.builders.Auth.RegisterDialog;
 import com.example.builders.Main.ArticleModel;
 import com.example.builders.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +39,7 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
     }
 
     private int cateSelect=1;
+    private String nowCate;
 
     RecyclerView rcv;
     RecycleAdapter_Main1 rcvAdap;
@@ -44,6 +52,10 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     private FirebaseAuth firebaseAuth;
+
+    static SharedPreferences getSharedPreferences(Context context) { //SharedPreferences 호출 함수
+        return PreferenceManager.getDefaultSharedPreferences(context);
+    }
 
     @Nullable
     @Override
@@ -59,12 +71,12 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
 
         rcv.setAdapter(rcvAdap);
 
-        ArticleModel model = new ArticleModel();
-        model.setName("이름");
-        model.setWant("개발");
-        model.setTeam("공모전/대회 팀원");
-        model.setTitle("테스트용 타이틀입니다. 코드를 대신 짜줄 킹갓 개발자를 구하고 있습니다. 살려주세요");
-        rcvAdap.add(model);
+//        ArticleModel model = new ArticleModel();
+//        model.setName("이름");
+//        model.setWant("개발");
+//        model.setTeam("공모전/대회 팀원");
+//        model.setTitle("테스트용 타이틀입니다. 코드를 대신 짜줄 킹갓 개발자를 구하고 있습니다. 살려주세요");
+//        rcvAdap.add(model);
 
         getElements(v);
 
@@ -72,6 +84,27 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
         background.startTransition(1);
         m1.setTextColor(Color.WHITE);
         m1.setTag("y");
+
+        String lastCate = getSharedPreferences(getContext()).getString("nowCate", "");
+
+        if(lastCate.equals("")) nowCate = "개발";
+        else nowCate = lastCate;
+        cate.setText(nowCate);
+
+        cate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CateDialog cateDialog = new CateDialog(getContext());
+                cateDialog.setDialogResult(new CateDialog.OnMyDialogResult() {
+                    @Override
+                    public void finish(String result) {
+                        nowCate=result;
+                        cate.setText(result);
+                    }
+                });
+                cateDialog.show();
+            }
+        });
 
         databaseReference.child("article").addChildEventListener(new ChildEventListener() {
             @Override

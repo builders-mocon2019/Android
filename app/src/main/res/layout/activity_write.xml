@@ -85,8 +85,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:fontFamily="@font/nanumsquarer"
-                    android:hint="30자 이내로 작성해주세요"
-                    android:maxLength="30"
+                    android:hint="80자 이내로 작성해주세요"
+                    android:maxLength="80"
                     android:textSize="16sp" />
 
             </LinearLayout>

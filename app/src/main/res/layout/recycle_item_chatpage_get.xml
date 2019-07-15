@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:53 PM"
+            android:textSize="10dp"
+            android:id="@+id/chatpage_time"
+            android:layout_marginStart="2dp"
+            android:layout_gravity="start"
+            />
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:id="@+id/chatpage_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/chatpage_get"
+            android:padding="12dp"
+            android:text="Message"
+            android:textColor="@android:color/black" />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

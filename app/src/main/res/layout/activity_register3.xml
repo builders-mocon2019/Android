@@ -283,6 +283,7 @@
                 android:hint="키워드를 공백으로 구분해서 입력해주세요!"
                 android:id="@+id/regi3_extra_txt"
                 android:singleLine="true"
+                android:maxLength="20"
                 android:textSize="18sp" />
 
         </RelativeLayout>
