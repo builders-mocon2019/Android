@@ -81,21 +81,29 @@ public class WriteActivity extends AppCompatActivity {
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(articleNum!=0){
-                    UserDB userDB = new UserDB();
-                    ArticleModel model = new ArticleModel(
-                            userDB.getUserName(getApplicationContext()), titleTxt.getText().toString(),
-                            textTxt.getText().toString(), want.getText().toString(), team.getText().toString(),
-                            "port", articleNum);
-                    databaseReference.child("article").push().setValue(model);
-                    Map<String, Object> childUpdates = new HashMap<>();
-                    childUpdates.put("article_num", articleNum+1);
-                    databaseReference.updateChildren(childUpdates);
-                    finish();
+                if(want.getText().toString().equals("")||team.getText().toString().equals("")
+                ||titleTxt.getText().toString().equals("")||textTxt.getText().toString().equals("")){
+                    Toast.makeText(WriteActivity.this, "빈칸을 입력해주세요", Toast.LENGTH_SHORT).show();
+
                 }
-                else{
-                    Toast.makeText(WriteActivity.this, "인터넷이 연결되었는지 확인하세요", Toast.LENGTH_SHORT).show();
+                else {
+                    if(articleNum!=0){
+                        UserDB userDB = new UserDB();
+                        ArticleModel model = new ArticleModel(
+                                userDB.getUserName(getApplicationContext()), titleTxt.getText().toString(),
+                                textTxt.getText().toString(), want.getText().toString(), team.getText().toString(),
+                                "port", articleNum, userDB.getUserProfile(getApplicationContext()));
+                        databaseReference.child("article").push().setValue(model);
+                        Map<String, Object> childUpdates = new HashMap<>();
+                        childUpdates.put("article_num", articleNum+1);
+                        databaseReference.updateChildren(childUpdates);
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(WriteActivity.this, "인터넷이 연결되었는지 확인하세요", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
 
             }
         });

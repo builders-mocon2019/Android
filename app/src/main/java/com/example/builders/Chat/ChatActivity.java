@@ -82,7 +82,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 RecycleModel_ChatPage member = dataSnapshot.getValue(RecycleModel_ChatPage.class); //추가된 값을 RecycleModel_ChatPage 양식으로 DB에서 가져옴
                 RecycleModel_Chat model = new RecycleModel_Chat(member.getName(),
-                        member.getMsg(), member.getTime()); //가져온 값을 RecycleModel_Chat 양식으로 캐스팅
+                        member.getMsg(), member.getTime(), member.getProfile()); //가져온 값을 RecycleModel_Chat 양식으로 캐스팅
 
                 UserDB userDB = new UserDB();
 
@@ -141,6 +141,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 //Intent에 RecyclerView의 클릭된 위치 아이템에서 가져온 메세지 유저 정보 첨부
                 intent.putExtra("name", rcvAdap.getItems().get(position).getName());
+                intent.putExtra("profile", rcvAdap.getItems().get(position).getProfile());
                 startActivity(intent); //프로필 화면 Activity 실행
             }
         });

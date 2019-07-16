@@ -44,6 +44,7 @@
 
 
     <LinearLayout
+        android:layout_marginBottom="56dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -222,7 +223,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/login_container3"
-        android:gravity="center">
+        android:gravity="center"
+        android:visibility="gone">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

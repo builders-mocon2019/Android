@@ -1,11 +1,14 @@
 package com.example.builders.Main4;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,10 @@ import com.example.builders.Dialog.Dialog_NewPassword;
 import com.example.builders.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.ByteArrayInputStream;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainFragment4 extends android.support.v4.app.Fragment {
 
     public static MainFragment4 newInstance(){
@@ -29,6 +36,8 @@ public class MainFragment4 extends android.support.v4.app.Fragment {
     TextView userName, userId;
     TextView c1, c2, c3, c4, c5, c6, c7, c8, c9;
     TextView t1, t2, t3;
+
+    CircleImageView profile;
 
     String[] can;
 
@@ -43,6 +52,17 @@ public class MainFragment4 extends android.support.v4.app.Fragment {
         userId.setText(userDB.getUserId(getContext()));
         can = userDB.getUserCan(getContext()).split(" ");
 
+        String data = userDB.getUserProfile(getContext());
+
+        //데이터 base64 형식으로 Decode
+        String txtPlainOrg = "";
+        byte[] bytePlainOrg = Base64.decode(data, 0);
+
+        //byte[] 데이터  stream 데이터로 변환 후 bitmapFactory로 이미지 생성
+        ByteArrayInputStream inStream = new ByteArrayInputStream(bytePlainOrg);
+        Bitmap bm = BitmapFactory.decodeStream(inStream) ;
+
+        profile.setImageBitmap(bm);
 
         for (String s : can) {
             switch (s) {
@@ -135,6 +155,7 @@ public class MainFragment4 extends android.support.v4.app.Fragment {
     void getElements(View v){
         userName = v.findViewById(R.id.main_user_name);
         userId = v.findViewById(R.id.main_user_id);
+        profile = v.findViewById(R.id.main4_profile);
 
         c1 = v.findViewById(R.id.main_user_can_1);
         c2 = v.findViewById(R.id.main_user_can_2);

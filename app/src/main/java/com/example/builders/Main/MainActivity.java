@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.builders.Chat.ChatActivity;
+import com.example.builders.Dialog.SearchActivity;
 import com.example.builders.Main1.MainFragment1;
 import com.example.builders.Main2.MainFragment2;
 import com.example.builders.Main3.MainFragment3;
@@ -27,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView actionChat, actionWrite;
+    ImageView actionChat, actionWrite, actionSearch;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -109,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        actionSearch = findViewById(R.id.action_search);
+        actionSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

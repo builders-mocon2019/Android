@@ -23,6 +23,7 @@ public class UserDB {
                 .putString("can", data.getCan())
                 .putString("want", data.getWant())
                 .putString("team", data.getTeam())
+                .putString("profile", data.getProfile())
                 .apply(); //SharedPreference에 반영
     }
 
@@ -79,6 +80,10 @@ public class UserDB {
 
     public String getUserTeam(Context context) {
         return getSharedPreferences(context).getString("team", "");
+    }
+
+    public String getUserProfile(Context context) {
+        return getSharedPreferences(context).getString("profile", "");
     }
 
 

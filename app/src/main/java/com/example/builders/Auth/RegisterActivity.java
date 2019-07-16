@@ -1,7 +1,11 @@
 package com.example.builders.Auth;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -9,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,21 +31,25 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class RegisterActivity extends AppCompatActivity {
 
     Button nextBtn;
-    TextView regiIndi, regiName, regiBirth, regiId, regiPw, regiPwCheck, regiCan, regiWant, regiTeam;
+    TextView regiIndi, regiName, regiBirth, regiId, regiPw, regiPwCheck, regiCan, regiWant, regiTeam, regiProfile;
 
     TextView errorName, errorId, errorPw, errorPwCheck;
     RoundCornerProgressBar progressBar;
 
     private int nowFrag;
 
-    private String name, birth, id, pw, pwcheck, can, want, team;
+    private String name, birth, id, pw, pwcheck, can, want, team, profile;
 
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -146,6 +155,25 @@ public class RegisterActivity extends AppCompatActivity {
             switchFragment(1);
             nowFrag = 1;
         } else errorName.setVisibility(View.VISIBLE);
+
+        regiProfile = findViewById(R.id.regi1_imageResult);
+        profile = regiProfile.getText().toString();
+        if(profile.equals("")){
+
+            CircleImageView imageView = findViewById(R.id.regi1_image);
+
+            Bitmap img = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+
+            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+            Resources res = getResources();
+
+            img.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+            byte[] image = outStream.toByteArray();
+            String profileImageBase64 = Base64.encodeToString(image, 0);
+
+            Log.d("asd", "onActivityResult: "+profileImageBase64);
+            profile = profileImageBase64;
+        }
     }
 
     void getRegi2() {
@@ -234,7 +262,7 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) { //회원가입에 성공했다면
-                                UserModel model = new UserModel(name, birth, id, can, want, team); //UserModel 양식에 회원가입 정보 추가
+                                UserModel model = new UserModel(name, birth, id, can, want, team, profile); //UserModel 양식에 회원가입 정보 추가
                                 databaseReference.child("user").push().setValue(model); //작성한 model 양식을 Firebase DB에 등록
                                 Toast.makeText(getApplicationContext(), "환영합니다, " + id + "!", Toast.LENGTH_SHORT).show(); //회원가입 성공 토스트
                                 RegisterDialog registerDialog = new RegisterDialog(RegisterActivity.this);

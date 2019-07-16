@@ -6,12 +6,21 @@ public class RecycleModel_Chat {
     //채팅 탭의 아이템 정보를 담을 양식 클래스
 
     //정보를 저장할 변수 선언
-    private String name, text, time;
+    private String name, text, time, profile;
 
-    public RecycleModel_Chat(String name, String text, String time){ //클래스 양식 지정
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public RecycleModel_Chat(String name, String text, String time, String profile){ //클래스 양식 지정
         this.name=name;
         this.text=text;
         this.time=time;
+        this.profile = profile;
     }
 
 

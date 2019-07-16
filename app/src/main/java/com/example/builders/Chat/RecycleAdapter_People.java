@@ -1,14 +1,22 @@
 package com.example.builders.Chat;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.builders.R;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +57,18 @@ public class RecycleAdapter_People extends RecyclerView.Adapter<RecycleHolder_Pe
         holder.name.setText(item.getName());
         holder.text.setText(item.getText());
         holder.time.setText(item.getTime());
+
+        String data = item.getProfile();
+
+        //데이터 base64 형식으로 Decode
+        String txtPlainOrg = "";
+        byte[] bytePlainOrg = Base64.decode(data, 0);
+
+        //byte[] 데이터  stream 데이터로 변환 후 bitmapFactory로 이미지 생성
+        ByteArrayInputStream inStream = new ByteArrayInputStream(bytePlainOrg);
+        Bitmap bm = BitmapFactory.decodeStream(inStream) ;
+
+        holder.profile.setImageBitmap(bm);
         //holder.profile.setImageDrawable(new ColorDrawable(item.getProfilenum()));
     }
 

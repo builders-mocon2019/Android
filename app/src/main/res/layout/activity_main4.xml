@@ -22,6 +22,7 @@
 
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/main4_profile"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
@@ -37,21 +38,21 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/main_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanumsquareeb"
                     android:text="정찬효"
-                    android:id="@+id/main_user_name"
                     android:textColor="@android:color/black"
                     android:textSize="26sp" />
 
                 <TextView
-                    android:layout_marginTop="2dp"
-                    android:layout_marginStart="2dp"
+                    android:id="@+id/main_user_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
                     android:fontFamily="@font/nanumsquarer"
-                    android:id="@+id/main_user_id"
                     android:text="roian6@naver.com" />
             </LinearLayout>
 
@@ -94,7 +95,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -116,7 +117,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -138,7 +139,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -167,7 +168,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -189,7 +190,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -211,7 +212,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -240,7 +241,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -262,7 +263,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -284,7 +285,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_transition"
-                    android:elevation="2dp"
+                    android:elevation="1dp"
                     android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"
                     android:paddingStart="12dp"
@@ -366,7 +367,7 @@
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/btn_transition"
-                android:elevation="2dp"
+                android:elevation="1dp"
                 android:fontFamily="@font/nanumsquarer"
                 android:gravity="center"
                 android:padding="12dp"
@@ -383,7 +384,7 @@
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/btn_transition"
-                android:elevation="2dp"
+                android:elevation="1dp"
                 android:fontFamily="@font/nanumsquarer"
                 android:gravity="center"
                 android:padding="12dp"
@@ -400,7 +401,7 @@
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/btn_transition"
-                android:elevation="2dp"
+                android:elevation="1dp"
                 android:fontFamily="@font/nanumsquarer"
                 android:gravity="center"
                 android:padding="12dp"
@@ -422,11 +423,11 @@
                 android:id="@+id/main_newpwBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/nanumsquarer"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
                 android:text="비밀번호 변경" />
 
             <TextView
@@ -438,11 +439,11 @@
                 android:id="@+id/main_logoutBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/nanumsquarer"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
                 android:text="로그아웃" />
 
             <TextView
@@ -454,11 +455,11 @@
                 android:id="@+id/main_deleteBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/nanumsquarer"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:padding="4dp"
                 android:text="회원탈퇴" />
 
         </LinearLayout>

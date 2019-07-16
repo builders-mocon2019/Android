@@ -5,17 +5,26 @@ public class UserModel {
     //유저 정보를 담을 양식 클래스
 
     //유저 정보 저장에 필요한 변수 선언
-    private String name, birth, id, can, want, team;
+    private String name, birth, id, can, want, team, profile;
 
     public UserModel(){}
 
-    public UserModel(String name, String birth, String id, String can, String want, String team){ //클래스 양식 지정
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public UserModel(String name, String birth, String id, String can, String want, String team, String profile){ //클래스 양식 지정
         this.name = name;
         this.birth = birth;
         this.id = id;
         this.can = can;
         this.want = want;
         this.team = team;
+        this.profile = profile;
     }
 
 

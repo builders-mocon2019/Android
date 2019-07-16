@@ -1,5 +1,6 @@
 package com.example.builders.Chat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.builders.Auth.UserDB;
 import com.example.builders.R;
@@ -41,15 +43,18 @@ public class ChatPageActivity extends AppCompatActivity {
     //채팅 입력 EditText, Button 선언
     EditText input;
     Button sendBtn;
-    String intentName, intentNickname; //getIntent() 에서 값을 받아올 변수 선언
+    String intentName, intentProfile; //getIntent() 에서 값을 받아올 변수 선언
 
+    TextView name;
+
+    LinearLayout backBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //StatusBar 없애기
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); //전체화면
+//        requestWindowFeature(Window.FEATURE_NO_TITLE); //StatusBar 없애기
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); //전체화면
         setContentView(R.layout.activity_chatpage);
 
         final UserDB userDB = new UserDB(); //현재 유저 정보가 담긴 DB 가져오기
@@ -58,17 +63,28 @@ public class ChatPageActivity extends AppCompatActivity {
 
         //getIntent()에서 대화 상대의 이메일과 닉네임을 가져와 변수에 저장
         intentName = getIntent().getStringExtra("name");
+        intentProfile = getIntent().getStringExtra("profile");
 
-        Toolbar toolbar = findViewById(R.id.toolbar_chatpage); //ToolBar 가져오기
-        toolbar.setTitle(intentNickname); //ToolBar의 Title을 대화 상대의 닉네임으로 설정
-        toolbar.setTitleTextColor(Color.WHITE); //Title 글자 색상을 흰색으로 설정
+        name = findViewById(R.id.chatpage_txt);
+        name.setText(intentName);
+//        Toolbar toolbar = findViewById(R.id.toolbar_chatpage); //ToolBar 가져오기
+//        toolbar.setTitle(intentNickname); //ToolBar의 Title을 대화 상대의 닉네임으로 설정
+//        toolbar.setTitleTextColor(Color.WHITE); //Title 글자 색상을 흰색으로 설정
 
-        setSupportActionBar(toolbar); //커스텀한 툴바를 ActionBar로 지정
+//        setSupportActionBar(toolbar); //커스텀한 툴바를 ActionBar로 지정
 
         //ActionBar에 뒤로가기 버튼 생성
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+
+        backBtn = findViewById(R.id.chatpage_backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         rcv = findViewById(R.id.recycler_chatpage); //RecyclerView findViewById
         rcv.setLayoutManager(new LinearLayoutManager(this)); //RecyclerView에 LayoutManager 지정
@@ -148,7 +164,7 @@ public class ChatPageActivity extends AppCompatActivity {
 
                     //RecycleModel_ChatPage 양식에 메세지 정보 저장
                     RecycleModel_ChatPage model = new RecycleModel_ChatPage(userDB.getUserName(getApplicationContext()),
-                            intentName, input.getText().toString(), getTimeDate.getTime(), getTimeDate.getDate());
+                            intentName, input.getText().toString(), getTimeDate.getTime(), getTimeDate.getDate(), userDB.getUserProfile(getApplicationContext()), intentProfile);
 
                     databaseReference.child("message").push().setValue(model); //Firebase DB의 message 항목에 저장된 양식 추가
                     input.setText(""); //메세지 입력창 초기화

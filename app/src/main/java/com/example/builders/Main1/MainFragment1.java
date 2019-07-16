@@ -21,14 +21,19 @@ import android.widget.TextView;
 
 import com.example.builders.Auth.RegisterActivity;
 import com.example.builders.Auth.RegisterDialog;
+import com.example.builders.Auth.UserDB;
 import com.example.builders.Main.ArticleModel;
 import com.example.builders.R;
+import com.example.builders.Write.LikeModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainFragment1 extends android.support.v4.app.Fragment {
@@ -47,7 +52,10 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
     TextView cate;
     TextView m1, m2, m3, m4;
 
+    List<ArticleModel> list = new ArrayList<>();
+    List<LikeModel> likeList = new ArrayList<>();
 
+    Context mContext;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -62,9 +70,15 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
         final View v =  inflater.inflate(R.layout.activity_main1, container, false);
 
+        mContext = container.getContext();
+
         rcv = v.findViewById(R.id.main1_recycler);
         LinearLayoutManager lm = new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL, false);
+
+        lm.setReverseLayout(true);
+        lm.setStackFromEnd(true);
+
         rcv.setLayoutManager(lm); //RecyclerView에 LayoutManager 지정
 
         rcvAdap = new RecycleAdapter_Main1();
@@ -100,17 +114,18 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
                     public void finish(String result) {
                         nowCate=result;
                         cate.setText(result);
+                        refreshItems();
                     }
                 });
                 cateDialog.show();
             }
         });
 
-        databaseReference.child("article").addChildEventListener(new ChildEventListener() {
+        databaseReference.child("like").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                ArticleModel model = dataSnapshot.getValue(ArticleModel.class);
-                rcvAdap.add(model);
+                LikeModel model = dataSnapshot.getValue(LikeModel.class);
+                likeList.add(model);
             }
 
             @Override
@@ -133,6 +148,37 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
 
             }
         });
+
+        databaseReference.child("article").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                ArticleModel model = dataSnapshot.getValue(ArticleModel.class);
+                list.add(model);
+                refreshItems();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
 
         return v;
     }
@@ -173,6 +219,7 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
                         m4.setTag("n");
                     }
                     cateSelect=1;
+                    refreshItems();
                     break;
                 case R.id.main1_menu2:
                     if (m2.getTag().equals("n")) {
@@ -194,6 +241,7 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
                         m4.setTag("n");
                     }
                     cateSelect=2;
+                    refreshItems();
                     break;
                 case R.id.main1_menu3:
                     if (m3.getTag().equals("n")) {
@@ -215,6 +263,7 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
                         m4.setTag("n");
                     }
                     cateSelect=3;
+                    refreshItems();
                     break;
                 case R.id.main1_menu4:
                     if (m4.getTag().equals("n")) {
@@ -236,9 +285,40 @@ public class MainFragment1 extends android.support.v4.app.Fragment {
                         m3.setTag("n");
                     }
                     cateSelect=4;
+                    refreshItems();
                     break;
             }
 
         }
     };
+
+    void refreshItems(){
+        rcvAdap.deleteAll();
+        for(int i=0;i<list.size();i++){
+            if(list.get(i).getWant().contains(nowCate)){
+                boolean likeCheck=false;
+                UserDB userDB = new UserDB();
+                switch (cateSelect){
+                    case 1:
+                        for(int j=0;j<likeList.size();j++){
+                            if(likeList.get(j).getKey().equals(userDB.getUserName(mContext)+list.get(i).getNum()))
+                                likeCheck = true;
+                        }
+                        if(likeCheck) rcvAdap.addWithLike(list.get(i));
+                        else rcvAdap.add(list.get(i));
+                        break;
+                    case 2:
+                        if(list.get(i).getTeam().contains("대회")) rcvAdap.add(list.get(i));
+                        break;
+                    case 3:
+                        if(list.get(i).getTeam().contains("취미")) rcvAdap.add(list.get(i));
+                        break;
+                    case 4:
+                        if(list.get(i).getTeam().contains("프로젝트")) rcvAdap.add(list.get(i));
+                        break;
+                }
+
+            }
+        }
+    }
 }

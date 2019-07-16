@@ -1,5 +1,7 @@
 package com.example.builders.Auth;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -8,8 +10,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -62,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
 
         container1 = findViewById(R.id.login_container1);
         container2 = findViewById(R.id.login_container2);
-        container3 = findViewById(R.id.login_container3);
+        //container3 = findViewById(R.id.login_container3);
 
         Animation animation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
         container1.startAnimation(animation);
@@ -71,9 +75,9 @@ public class LoginActivity extends AppCompatActivity {
         animation2.setStartOffset(700);
         container2.startAnimation(animation2);
 
-        Animation animation3 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
-        animation3.setStartOffset(1400);
-        container3.startAnimation(animation3);
+//        Animation animation3 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
+//        animation3.setStartOffset(1400);
+//        container3.startAnimation(animation3);
 
 
         firebaseAuth = FirebaseAuth.getInstance(); //Firebase 현재 Auth 정보 가져오기
@@ -131,7 +135,33 @@ public class LoginActivity extends AppCompatActivity {
         findPwBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this, "개발중인 기능입니다.", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                builder.setTitle("비밀번호 변경 메일을 전송할 주소를 입력하세요");
+
+// Set up the input
+                final EditText input = new EditText(LoginActivity.this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                setMargins(input, 200, 200, 200, 200);
+                builder.setView(input);
+
+
+// Set up the buttons
+                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        firebaseAuth = FirebaseAuth.getInstance();
+                        firebaseAuth.sendPasswordResetEmail(input.getText().toString()); //비밀번호 재설정 메일 전송
+                        Toast.makeText(LoginActivity.this, "성공적으로 전송했습니다!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
             }
         });
 
@@ -177,6 +207,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void setMargins (View view, int left, int top, int right, int bottom) {
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            p.setMargins(left, top, right, bottom);
+            view.requestLayout();
+        }
+    }
     @Override
     protected void onStart() { //LoginActivity가 시작할 때
         super.onStart();

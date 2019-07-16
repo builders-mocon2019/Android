@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:text="분야를 선택하세요"
             android:gravity="center"
+            android:layout_gravity="start"
             android:fontFamily="@font/nanumsquareeb"
             android:textSize="24sp"
             android:textColor="@android:color/black"

@@ -157,4 +157,67 @@
         android:visibility="gone"/>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/nanumsquareb"
+                android:text="프로필 사진"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(선택사항, 반드시 1MB 이하로 등록하세요)"
+                android:fontFamily="@font/nanumsquarer"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:id="@+id/regi1_image"
+            android:src="@drawable/ic_person"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:text="갤러리에서 가져오기"
+            android:fontFamily="@font/nanumsquarer"
+            android:textColor="#808080"
+            android:background="@android:color/transparent"
+            android:id="@+id/testBtn"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/regi1_imageResult"/>
+
+
 </LinearLayout>

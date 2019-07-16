@@ -5,12 +5,20 @@ public class ArticleModel {
     //유저 정보를 담을 양식 클래스
 
     //유저 정보 저장에 필요한 변수 선언
-    private String name, title, text, want, team, port;
+    private String name, title, text, want, team, port, profile;
     int num;
 
     public ArticleModel(){}
 
-    public ArticleModel(String name, String title, String text, String want, String team, String port, int num){ //클래스 양식 지정
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public ArticleModel(String name, String title, String text, String want, String team, String port, int num, String profile){ //클래스 양식 지정
         this.name = name;
         this.title = title;
         this.text = text;
@@ -18,6 +26,7 @@ public class ArticleModel {
         this.team = team;
         this.port = port;
         this.num = num;
+        this.profile = profile;
     }
 
     public String getName() {
